@@ -1,0 +1,40 @@
+// MIXINS
+
+// Create vendor-prefixed CSS, e.g. 
+// '@include vendor(border-radius, 4px);'
+
+@mixin vendor($property, $value){
+    -webkit-#{$property}:$value;
+    -moz-#{$property}:$value;
+    -ms-#{$property}:$value;
+    -o-#{$property}:$value;
+    #{$property}:$value;
+}
+
+
+// Create vendor-prefixed CSS gradient, e.g.
+// '@include linear-gradient(#fff, #000);'
+ 
+@mixin linear-gradient($from, $to){
+    background-color: $from;
+    background-image: -moz-linear-gradient($from, $to);
+    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from($from), to($to));
+    background-image: -webkit-linear-gradient($from, $to);
+    background-image: -o-linear-gradient($from, $to);
+}
+
+
+// Create selector-related media queries, e.g.
+// '@include breakpoint(mobile){ color: #333; };'
+
+@mixin breakpoint($point) {
+    @if $point == mobile {
+        @media (max-width: 479px) { @content; }
+    }
+    @else if $point == narrow {
+        @media (max-width: 767px) { @content; }
+    }
+    @else if $point == normal {
+        @media (max-width: 999px)  { @content; }
+    }
+}

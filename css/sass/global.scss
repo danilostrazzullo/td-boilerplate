@@ -1,0 +1,43 @@
+/*!
+ * File: global.min.css
+ * Project: ProjectName
+ * Author: FrontEndDevTeam
+ * Updated: dd/mm/yyyy 
+ */
+
+/*------------------------------------*\
+    $CONTENTS
+\*------------------------------------*/
+
+/**
+ * NORMALIZE....normalize.css
+ *
+ * JQUERY-UI....jquery-ui.css
+ * FANCYBOX.....jquery.fancybox.css
+ * 
+ * STYLE........Project styles
+ *
+ * HELPER.......Helper classes
+ *
+ * PRINT........Print style
+ */
+
+// Import variables
+@import "vars";
+
+// Import defaults
+@import "defaults/mixins";
+@import "defaults/normalize";
+
+// Import partials
+@import "partials/plugins/jquery-ui";
+@import "partials/plugins/fancybox";
+
+// Import project styles
+@import "style";
+
+// Import helper classes
+@import "defaults/helper";
+
+// Import print style
+@import "defaults/print";
