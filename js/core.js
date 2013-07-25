@@ -5,33 +5,24 @@
  * Updated: dd/mm/yyyy 
  */
 
-var core = (function ($, window, document) {
+var core = (function ($) {
+    
+    "use strict";
 
     return {
 
-        // HELPERS
-        helper: {
-            winWidth: function() {
-                return $(window).width();
-            },
-
-            winHeight: function() {
-                return $(window).height();
-            }
-        },
-
         // BOOTSTRAP MODULES
-        bootstrap: function(options) {
+        bootstrap: function(settings) {
             var m = this.modules,
                 i;
                         
-            for (i in m) {
+            for ( i = 0; i < m.length; i++ ) {
                 
                 var $el   = $(m[i].selector),
                     check = $el.length;
                 
                 if(check) {
-                    m[i].init(options);
+                    m[i].init(settings);
                 }
             }
         },
@@ -42,8 +33,8 @@ var core = (function ($, window, document) {
             // Module Example
             /*
             customModule: {
-                selector: '.class',
-                init: function(options) {
+                selector: '.js-classname',
+                init: function(settings) {
                     
                     var $this = $(this.selector);
 
@@ -55,4 +46,4 @@ var core = (function ($, window, document) {
         }
     };
 
-})(jQuery, window, document);
+})(jQuery);

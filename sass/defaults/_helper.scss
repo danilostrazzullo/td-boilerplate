@@ -2,15 +2,15 @@
     $HELPER
 \*------------------------------------*/
 
-.floatright { float: right; }
-.floatleft { float: left; }
+.float-right { float: right; }
+.float-left { float: left; }
 
-.text-center{ text-align:center; }
+.align-center { text-align: center; }
 
 
 // Clearfix
 
-.cf{
+.cf {
     zoom:1;
     
     &:before,
