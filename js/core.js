@@ -16,7 +16,7 @@ var core = (function ($) {
             var m = this.modules,
                 i;
                         
-            for ( i = 0; i < m.length; i++ ) {
+            for ( i in m ) {
                 
                 var $el   = $(m[i].selector),
                     check = $el.length;
