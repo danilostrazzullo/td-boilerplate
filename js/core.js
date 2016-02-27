@@ -2,27 +2,23 @@
  * File: core.js
  * Project: ProjectName
  * Author: FrontEndDevTeam
- * Updated: dd/mm/yyyy 
+ * Updated: dd/mm/yyyy
  */
 
-var core = (function ($,settings) {
-    
+const core = (function ($, settings) {
+
     "use strict";
-    
-    var s = settings || {};
 
     return {
 
         // BOOTSTRAP MODULES
-        bootstrap: function() {
-            var m = this.modules,
+        bootstrap: function () {
+            let m = this.modules,
                 i;
-                        
-            for ( i in m ) {
-                
-                var e = document.querySelectorAll(m[i].selector).length;
-                
-                if(e) {
+
+            for (i in m) {
+
+                if (document.querySelectorAll(m[i].selector).length) {
                     m[i].init(settings);
                 }
             }
@@ -30,21 +26,21 @@ var core = (function ($,settings) {
 
         // MODULES
         modules: {
-            
+
             // Module Example
             /*
             customModule: {
                 selector: '.js-classname',
                 init: function(settings) {
-                    
+
                     var $this = $(this.selector);
 
                     $this.pluginName();
-                    
+
                 }
             }
             */
         }
     };
 
-})(jQuery,coreSettings);
+}(jQuery, coreSettings));
